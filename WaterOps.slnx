@@ -1,0 +1,24 @@
+<Solution>
+  <Folder Name="/Lib/">
+    <Project Path="Lib/WaterOps.Calculations/WaterOps.Calculations.csproj" Id="dbf427b2-faa2-457b-92dd-d608b958f11e" />
+    <Project Path="Lib/WaterOps.Repositories/WaterOps.Repositories.csproj" Id="293fc917-a6ee-4d8e-a5e2-c759ba063f4c" />
+    <Project Path="Lib/WaterOps.Resources/WaterOps.Resources.csproj" Id="0fc9468d-a517-446f-ab54-efb23c4f04f4" />
+  </Folder>
+  <Folder Name="/Src/" />
+  <Folder Name="/Src/Clients/">
+    <Project Path="Src/Clients/WaterOps.Assumption/WaterOps.Assumption.csproj" Id="9f99597d-4a8c-43ef-b307-400eb7a7c413" />
+    <Project Path="Src/Clients/WaterOps.Lutcher/WaterOps.Lutcher.csproj" Id="ee092f4e-6da4-4228-ab62-464241bcf5c3" />
+    <Project Path="Src/Clients/WaterOps.StCharles/WaterOps.StCharles.csproj" Id="5d58713f-4960-4d9e-b8e5-05b67e024307" />
+    <Project Path="Src/Clients/WaterOps.StJames/WaterOps.StJames.csproj" Id="73596914-c9f1-4356-b469-6d8f556effa4" />
+    <Project Path="Src/Clients/WaterOps.Thibodaux/WaterOps.Thibodaux.csproj" Id="23182913-fb89-474f-be19-33de894a0146" />
+  </Folder>
+  <Folder Name="/Src/Modules/">
+    <Project Path="Src/Modules/WaterOps.Calibrations/WaterOps.Calibrations.csproj" Id="841aa188-fc93-4702-8a5b-f65c72173c96" />
+    <Project Path="Src/Modules/WaterOps.Reports/WaterOps.Reports.csproj" Id="3a799b3e-b815-4fc8-8330-c844a4418229" />
+  </Folder>
+  <Folder Name="/Src/Tools/">
+    <Project Path="Src/Tools/WaterOps.Previewer/WaterOps.Previewer.csproj" Id="27bb1ac2-b488-4a53-81f7-d5b1bb971fbc" />
+    <Project Path="Src/Tools/WaterOps.Terminal/WaterOps.Terminal.csproj" Id="7d301465-c3c8-4680-9a3b-a217c5051348" />
+  </Folder>
+  <Project Path="WaterOps.Core/WaterOps.Core.csproj" Id="8f21ce0c-de56-4bf5-aeda-f69123ff1ba1" />
+</Solution>

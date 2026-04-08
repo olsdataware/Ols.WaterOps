@@ -1,0 +1,61 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="WaterOps.StCharles.App"
+             RequestedThemeVariant="Default"
+             xmlns:actipro="http://schemas.actiprosoftware.com/avaloniaui"
+             xmlns:generation="using:ActiproSoftware.UI.Avalonia.Themes.Generation"
+             xmlns:vm="clr-namespace:WaterOps.Calibrations.ViewModels;assembly=WaterOps.Calibrations"
+             xmlns:view="clr-namespace:WaterOps.Calibrations.Views;assembly=WaterOps.Calibrations">
+
+    <Application.DataTemplates>
+        <DataTemplate DataType="{x:Type vm:CalibrationDetailsViewModel}">
+            <view:CalibrationDetailsView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:CalibrationHistoryViewModel}">
+            <view:CalibrationHistoryView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:DashViewModel}">
+            <view:DashView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:InstrumentsViewModel}">
+            <view:InstrumentsView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:StandardsViewModel}">
+            <view:StandardsView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:ValidationDetailsViewModel}">
+            <view:ValidationDetailsView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:ValidationHistoryViewModel}">
+            <view:ValidationHistoryView/>
+        </DataTemplate>
+    </Application.DataTemplates>
+    
+    <Application.Styles>
+        <actipro:ModernTheme>
+            <actipro:ModernTheme.Definition>
+                <generation:ThemeDefinition UseAccentedSwitches="True" AccentColorRampName="Sky">
+                    <generation:ThemeDefinition.ColorPaletteFactory>
+                        <generation:DefaultColorPaletteFactory NeutralMidtoneColor="SlateGray" />
+                    </generation:ThemeDefinition.ColorPaletteFactory>
+                </generation:ThemeDefinition>
+            </actipro:ModernTheme.Definition>
+        </actipro:ModernTheme>
+        <StyleInclude Source="avares://WaterOps.Resources/Styles/OpsStyles.axaml"/>
+    </Application.Styles>
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://WaterOps.Resources/Resources/OpsResources.axaml"></ResourceInclude>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>

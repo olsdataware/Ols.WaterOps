@@ -1,0 +1,102 @@
+# ============================================================
+# Secrets — never commit credentials or connection strings
+# ============================================================
+Lib/WaterOps.Repositories/Secrets/
+Lib\WaterOps.Repositories\Secrets\
+
+# ============================================================
+# Visual Studio 2026 / VS IDE
+# ============================================================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# Rider / JetBrains
+.idea/
+
+# ============================================================
+# .NET / MSBuild build output
+# ============================================================
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+
+# NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.assets.json
+packages/
+!**/[Pp]ackages/build/
+
+# ============================================================
+# Avalonia / XAML designer
+# ============================================================
+
+# Avalonia compiled XAML cache
+**/*.axaml.cs.cache
+**/XamlIlTypeSystem*.dll
+
+# Hot reload temp files
+**/__avalonia__*
+
+# ============================================================
+# Test results & coverage
+# ============================================================
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+TestResult.xml
+coverage*.xml
+coverage*.json
+*.coverage
+*.coveragexml
+
+# ============================================================
+# Publish / deployment artifacts
+# ============================================================
+[Pp]ublish/
+publish/
+PublishProfiles/
+
+# ============================================================
+# OS artifacts
+# ============================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+
+# ============================================================
+# Editor / tool specifics
+# ============================================================
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# ============================================================
+# Environment & local config (belt-and-suspenders for secrets)
+# ============================================================
+.env
+.env.*
+appsettings.Local.json
+appsettings.*.Local.json
+local.settings.json

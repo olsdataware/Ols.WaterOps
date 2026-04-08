@@ -1,0 +1,181 @@
+﻿
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="using:WaterOps.Core.Models"
+             xmlns:local="using:WaterOps.StCharles.ViewModels"
+             xmlns:icon="clr-namespace:IconPacks.Avalonia.PhosphorIcons;assembly=IconPacks.Avalonia.PhosphorIcons"
+             mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
+             x:Class="WaterOps.StCharles.Views.MainView"
+             x:DataType="local:MainViewModel"
+             x:CompileBindings="True">
+        
+    <Panel>
+        <SplitView
+            x:Name="MainSplit"
+            DisplayMode="Overlay">
+            
+            <!-- Pane -->
+            <SplitView.Pane></SplitView.Pane>
+            
+            <SplitView.Content>
+                <Grid 
+                    ColumnDefinitions="*,*,*" 
+                    RowDefinitions="Auto, *">
+                    
+                    <!-- Title Bar -->
+                    <!-- Leading -->
+                    <StackPanel
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Left"
+                        Spacing="8"
+                        Margin="8,0,0,0">
+                        
+                        <Image 
+                            Source="{SvgImage avares://WaterOps.Resources/Resources/Assets/Icon.svg}"
+                            Height="24"
+                            Width="24"/>
+                        
+                        <Button
+                            x:Name="MenuButton"
+                            Click="MenuButton_Click"
+                            BorderThickness="0">
+                            
+                            <icon:PhosphorIcons
+                                Kind="ListBold"
+                                Width="16"
+                                Height="16"/>
+                            
+                        </Button>
+                        
+                        <Button
+                            BorderThickness="0"
+                            Command="{Binding SaveCommand}"
+                            IsVisible="{Binding CanSave}">
+                            
+                            <icon:PhosphorIcons
+                                Kind="FloppyDisk"
+                                Width="14"
+                                Height="14"/>
+                        </Button>
+
+                        <Button
+                            BorderThickness="0"
+                            Command="{Binding PrintCommand}"
+                            IsVisible="{Binding CanPrint}">
+                            
+                            <icon:PhosphorIcons
+                                Kind="Printer"
+                                Width="18"
+                                Height="18"/>
+                        </Button>
+                        
+                        <Button
+                            BorderThickness="0"
+                            Command="{Binding RefreshCommand}">
+                            
+                            <icon:PhosphorIcons
+                                Kind="ArrowClockwise"
+                                Width="16"
+                                Height="16"/>
+                        </Button>
+                        
+                        <TextBlock
+                            Text="{Binding ViewModel.Title, FallbackValue='Loading...', TargetNullValue='WaterOS'}"
+                            VerticalAlignment="Center"/>
+                        
+                    </StackPanel>
+                    
+                    <!-- Center -->
+                    <StackPanel
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Spacing="8">
+
+                        <ComboBox
+                            Width="320"
+                            BorderThickness="0"
+                            ItemsSource="{Binding PwsList}"
+                            SelectedItem="{Binding Pws}">
+                            
+                            <ComboBox.ItemTemplate>
+								<DataTemplate DataType="{x:Type models:PwsInformation}">
+								    <TextBlock Text="{Binding PwsName}" HorizontalAlignment="Center"/>
+                                </DataTemplate>		
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        
+                    </StackPanel>
+                    
+                    <!-- Trailing -->
+                    <StackPanel
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Spacing="8">
+                        
+                        <CalendarDatePicker
+                            Watermark="MM/DD/YYYY"
+                            BorderThickness="0"
+                            SelectedDate="{Binding Date}"/>
+                        
+                        <Button
+                            x:Name="ThemeButton"
+                            Click="ThemeButton_Click"
+                            BorderThickness="0">
+                        </Button>
+                        
+                        <Button 
+                            x:Name="MinimizeButton"
+                            Click="MinimizeButton_Click"
+                            BorderThickness="0">
+                            
+                            <icon:PhosphorIcons
+                                Kind="Minus"
+                                Width="10"
+                                Height="10"/>
+                        </Button>
+                        
+                        <Button
+                            x:Name="MaximizeButton"
+                            Click="MaximizeButton_Click"
+                            BorderThickness="0">
+                            
+                            <icon:PhosphorIcons
+                                Kind="Square"
+                                Width="10"
+                                Height="10"/>
+                        </Button>
+                        
+                        <Button
+                            x:Name="CloseButton"
+                            Click="CloseButton_Click"
+                            BorderThickness="0">
+                            
+                            <icon:PhosphorIcons
+                                Kind="X" 
+                                Width="10"
+                                Height="10"/>
+                        </Button>
+                    </StackPanel>
+                    
+                    <!-- Content -->
+                    <TransitioningContentControl
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Grid.Row="1"
+                        Content="{Binding ViewModel}"/>
+                    
+                </Grid> 
+            </SplitView.Content>
+            
+        </SplitView>
+    </Panel>
+    
+</UserControl>
