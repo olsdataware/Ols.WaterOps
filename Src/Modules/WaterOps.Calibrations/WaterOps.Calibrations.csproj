@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Tmds.DBus.Protocol" Version="0.92.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Lib\WaterOps.Repositories\WaterOps.Repositories.csproj" />
     <ProjectReference Include="..\..\..\Lib\WaterOps.Resources\WaterOps.Resources.csproj" />
     <ProjectReference Include="..\..\..\WaterOps.Core\WaterOps.Core.csproj" />

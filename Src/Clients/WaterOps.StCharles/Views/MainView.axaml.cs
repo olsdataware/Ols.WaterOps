@@ -11,25 +11,9 @@ namespace WaterOps.StCharles.Views;
 
 public partial class MainView : UserControl
 {
-    private readonly PackIconPhosphorIcons _dark = new()
-    {
-        Kind = PackIconPhosphorIconsKind.Moon,
-        Height = 14,
-        Width = 14,
-    };
-
-    private readonly PackIconPhosphorIcons _light = new()
-    {
-        Kind = PackIconPhosphorIconsKind.Sun,
-        Height = 14,
-        Width = 14,
-    };
-
     public MainView()
     {
         InitializeComponent();
-        ThemeButton.Content =
-            Application.Current?.ActualThemeVariant == ThemeVariant.Dark ? _dark : _light;
     }
 
     protected override async void OnLoaded(RoutedEventArgs e)
@@ -65,21 +49,6 @@ public partial class MainView : UserControl
         if (TopLevel.GetTopLevel(this) is Window window)
         {
             window.Close();
-        }
-    }
-
-    private void ThemeButton_Click(object? sender, RoutedEventArgs e)
-    {
-        var theme = Application.Current?.ActualThemeVariant;
-        if (theme == ThemeVariant.Light)
-        {
-            Application.Current?.RequestedThemeVariant = ThemeVariant.Dark;
-            ThemeButton.Content = _dark;
-        }
-        else
-        {
-            Application.Current?.RequestedThemeVariant = ThemeVariant.Light;
-            ThemeButton.Content = _light;
         }
     }
 

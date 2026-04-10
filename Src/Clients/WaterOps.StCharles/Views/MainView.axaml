@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:models="using:WaterOps.Core.Models"
              xmlns:local="using:WaterOps.StCharles.ViewModels"
-             xmlns:icon="clr-namespace:IconPacks.Avalonia.PhosphorIcons;assembly=IconPacks.Avalonia.PhosphorIcons"
+             xmlns:actipro="http://schemas.actiprosoftware.com/avaloniaui"
              mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
              x:Class="WaterOps.StCharles.Views.MainView"
              x:DataType="local:MainViewModel"
@@ -17,7 +17,73 @@
             DisplayMode="Overlay">
             
             <!-- Pane -->
-            <SplitView.Pane></SplitView.Pane>
+            <SplitView.Pane>
+                <Grid
+                    ColumnDefinitions="*"
+                    RowDefinitions="Auto, *, Auto">
+                
+                    <!-- Header -->
+                    <Grid
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        ColumnDefinitions="Auto, *"
+                        RowDefinitions="Auto, Auto">
+
+                        <Image
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Source="{SvgImage avares://WaterOps.Resources/Resources/Assets/Icon.svg}"
+                            Height="48"
+                            Width="48"
+                            Margin="12"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            VerticalAlignment="Bottom"
+                            FontWeight="Black"
+                            Classes="accent"
+                            FontSize="18"
+                            Text="St. Charles Parish"/>
+
+                        <TextBlock
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            VerticalAlignment="Top"
+                            FontWeight="Light"
+                            FontSize="10"
+                            Text="WATEROPS: OLS DATAWARE, LLC"/>                    
+                    </Grid>
+
+                    <StackPanel
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Margin="8">
+
+                        <StackPanel.Styles>
+							<Style Selector="Button">
+								<Setter Property="HorizontalContentAlignment" Value="Left"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Style Selector="^:pointerover /template/ ContentPresenter">
+                                    <Setter Property="Background" Value="#0000003b"/>
+                                    <Setter Property="BorderBrush" Value="Transparent"/>
+                                </Style>
+                                <Style Selector="^:pointerover">
+                                    <Setter Property="Opacity" Value="0.8"/>
+                                </Style>
+                            </Style>
+                        </StackPanel.Styles>
+                        
+                        <Button>
+							Dashboard
+                        </Button>
+                    
+                    </StackPanel>
+
+                </Grid>
+            </SplitView.Pane>
             
             <SplitView.Content>
                 <Grid 
@@ -44,8 +110,8 @@
                             Click="MenuButton_Click"
                             BorderThickness="0">
                             
-                            <icon:PhosphorIcons
-                                Kind="ListBold"
+                            <PathIcon
+                                Data="{DynamicResource Menu}"
                                 Width="16"
                                 Height="16"/>
                             
@@ -56,8 +122,8 @@
                             Command="{Binding SaveCommand}"
                             IsVisible="{Binding CanSave}">
                             
-                            <icon:PhosphorIcons
-                                Kind="FloppyDisk"
+                            <PathIcon
+                                Data="{DynamicResource Save}"
                                 Width="14"
                                 Height="14"/>
                         </Button>
@@ -67,8 +133,8 @@
                             Command="{Binding PrintCommand}"
                             IsVisible="{Binding CanPrint}">
                             
-                            <icon:PhosphorIcons
-                                Kind="Printer"
+                            <PathIcon
+                                Data="{DynamicResource Print}"
                                 Width="18"
                                 Height="18"/>
                         </Button>
@@ -77,10 +143,10 @@
                             BorderThickness="0"
                             Command="{Binding RefreshCommand}">
                             
-                            <icon:PhosphorIcons
-                                Kind="ArrowClockwise"
-                                Width="16"
-                                Height="16"/>
+                            <PathIcon
+                                Data="{DynamicResource Refresh}"
+                                Width="14"
+                                Height="14"/>
                         </Button>
                         
                         <TextBlock
@@ -125,19 +191,16 @@
                             BorderThickness="0"
                             SelectedDate="{Binding Date}"/>
                         
-                        <Button
-                            x:Name="ThemeButton"
-                            Click="ThemeButton_Click"
-                            BorderThickness="0">
-                        </Button>
+                        <actipro:ToggleThemeButton
+                            Classes="theme-link"/>
                         
                         <Button 
                             x:Name="MinimizeButton"
                             Click="MinimizeButton_Click"
                             BorderThickness="0">
                             
-                            <icon:PhosphorIcons
-                                Kind="Minus"
+                            <PathIcon
+                                Data="{DynamicResource Minimize}"
                                 Width="10"
                                 Height="10"/>
                         </Button>
@@ -147,8 +210,8 @@
                             Click="MaximizeButton_Click"
                             BorderThickness="0">
                             
-                            <icon:PhosphorIcons
-                                Kind="Square"
+                            <PathIcon
+                                Data="{DynamicResource Maximize}"
                                 Width="10"
                                 Height="10"/>
                         </Button>
@@ -158,8 +221,8 @@
                             Click="CloseButton_Click"
                             BorderThickness="0">
                             
-                            <icon:PhosphorIcons
-                                Kind="X" 
+                            <PathIcon
+                                Data="{DynamicResource Close}"
                                 Width="10"
                                 Height="10"/>
                         </Button>

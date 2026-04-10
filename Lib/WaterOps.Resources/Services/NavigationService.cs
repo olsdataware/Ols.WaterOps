@@ -1,8 +1,12 @@
-﻿using WaterOps.Resources.Interfaces;
+﻿using WaterOps.Resources.Controls.ViewModels;
+using WaterOps.Resources.Controls.Views;
+using WaterOps.Resources.Enums;
+using WaterOps.Resources.Interfaces;
 
 namespace WaterOps.Resources.Services;
 
-public class NavigationService(IViewModelFactory factory) : INavigationService
+public class NavigationService(IViewModelFactory factory, IDialogService dialogService)
+    : INavigationService
 {
     private IViewModel? _viewModel;
 
@@ -24,7 +28,19 @@ public class NavigationService(IViewModelFactory factory) : INavigationService
         {
             if (ViewModel.IsDirty)
             {
-                await ViewModel.Save();
+                IDialogViewModel dialogViewModel = new SaveChangesViewModel();
+                var dialogView = new SaveChangesView();
+
+                var result = await dialogService.ShowAsync(dialogView, dialogViewModel);
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        await ViewModel.Save();
+                        break;
+                    case DialogResult.Cancel:
+                        return;
+                }
             }
         }
 

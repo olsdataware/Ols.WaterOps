@@ -38,16 +38,7 @@
     </Application.DataTemplates>
     
     <Application.Styles>
-        <actipro:ModernTheme>
-            <actipro:ModernTheme.Definition>
-                <generation:ThemeDefinition UseAccentedSwitches="True" AccentColorRampName="Sky">
-                    <generation:ThemeDefinition.ColorPaletteFactory>
-                        <generation:DefaultColorPaletteFactory NeutralMidtoneColor="SlateGray" />
-                    </generation:ThemeDefinition.ColorPaletteFactory>
-                </generation:ThemeDefinition>
-            </actipro:ModernTheme.Definition>
-        </actipro:ModernTheme>
-        <StyleInclude Source="avares://WaterOps.Resources/Styles/OpsStyles.axaml"/>
+        <FluentTheme/>
     </Application.Styles>
     
     <Application.Resources>

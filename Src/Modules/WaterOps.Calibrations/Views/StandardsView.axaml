@@ -7,5 +7,12 @@
              x:Class="WaterOps.Calibrations.Views.StandardsView"
              x:DataType="{x:Type vm:StandardsViewModel}"
              x:CompileBindings="True">
-    Welcome to Avalonia!
+
+    <Grid 
+        ColumnDefinitions="*, *, *, *, *, *, *, *, *, Auto"
+        RowDefinitions="Auto, *">
+		
+
+    </Grid>
+
 </UserControl>
