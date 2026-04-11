@@ -8,23 +8,11 @@ public partial class StandardsViewModel : ObservableObject, IViewModel
     public string? Title { get; set; } = "Standards";
     public bool IsDirty { get; set; }
 
-    public Task Initialize(object? parameter = null)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task Initialize(object? parameter = null) { }
 
-    public Task Save()
-    {
-        throw new NotImplementedException();
-    }
+    public async Task Save() { }
 
-    public Task Print()
-    {
-        throw new NotImplementedException();
-    }
+    public Task Print() => Task.CompletedTask;
 
-    public Task Delete()
-    {
-        throw new NotImplementedException();
-    }
+    public Task Delete() => Task.CompletedTask;
 }

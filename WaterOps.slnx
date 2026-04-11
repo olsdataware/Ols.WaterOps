@@ -3,6 +3,7 @@
     <Project Path="Lib/WaterOps.Calculations/WaterOps.Calculations.csproj" Id="dbf427b2-faa2-457b-92dd-d608b958f11e" />
     <Project Path="Lib/WaterOps.Repositories/WaterOps.Repositories.csproj" Id="293fc917-a6ee-4d8e-a5e2-c759ba063f4c" />
     <Project Path="Lib/WaterOps.Resources/WaterOps.Resources.csproj" Id="0fc9468d-a517-446f-ab54-efb23c4f04f4" />
+    <Project Path="Lib/WaterOps.Updates/WaterOps.Updates.csproj" />
   </Folder>
   <Folder Name="/Src/" />
   <Folder Name="/Src/Clients/">

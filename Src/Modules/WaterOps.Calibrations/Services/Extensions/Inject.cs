@@ -6,7 +6,7 @@ namespace WaterOps.Calibrations.Services.Extensions;
 
 public static class Inject
 {
-    public static void AddCalibrations(this IServiceCollection collection)
+    public static IServiceCollection AddCalibrations(this IServiceCollection collection)
     {
         collection.AddTransient<CalibrationDetailsViewModel>();
         collection.AddTransient<CalibrationDetailsView>();
@@ -20,5 +20,7 @@ public static class Inject
         collection.AddTransient<StandardsView>();
         collection.AddTransient<ValidationDetailsViewModel>();
         collection.AddTransient<ValidationDetailsView>();
+
+        return collection;
     }
 }

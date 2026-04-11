@@ -7,12 +7,13 @@
         MinWidth="1280" MinHeight="720"
         x:Class="WaterOps.StCharles.MainWindow"
         x:CompileBindings="True"
-        ExtendClientAreaChromeHints="NoChrome"
+        WindowDecorations="BorderOnly"
         ExtendClientAreaToDecorationsHint="True"
+        Title=""
         Icon="avares://WaterOps.Resources/Resources/Assets/Icon.ico"
-        Title="WaterOps.StCharles"
-        Padding="{Binding $self.OffScreenMargin}">
-        
-        <ContentControl x:Name="MainHostContent"/>
+        Padding="{Binding $self.OffScreenMargin}"
+        Background="{DynamicResource BackgroundBrush}">               
+
+        <ContentControl Grid.Row="0" x:Name="MainHostContent"/>
         
 </Window>

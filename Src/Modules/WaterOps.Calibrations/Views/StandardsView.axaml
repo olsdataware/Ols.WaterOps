@@ -6,13 +6,31 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WaterOps.Calibrations.Views.StandardsView"
              x:DataType="{x:Type vm:StandardsViewModel}"
-             x:CompileBindings="True">
-
+             x:CompileBindings="True"
+             Background="{DynamicResource BackgroundBrush}">
     <Grid 
-        ColumnDefinitions="*, *, *, *, *, *, *, *, *, Auto"
+        ColumnDefinitions="*"
         RowDefinitions="Auto, *">
+
+        <!-- Header -->
+        <Grid 
+            Grid.Column="0"
+            Grid.Row="0"
+            ColumnDefinitions="*, *, *, *, *, Auto"
+            RowDefinitions="Auto">
 		
 
+
+        </Grid>
+
+        <!-- Content -->
+        <ScrollViewer
+            Grid.Column="0"
+            Grid.Row="1">
+            <ItemsRepeater>
+				
+            </ItemsRepeater>
+        </ScrollViewer>
     </Grid>
 
 </UserControl>

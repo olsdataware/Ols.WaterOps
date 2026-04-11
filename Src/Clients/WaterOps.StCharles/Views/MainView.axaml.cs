@@ -56,4 +56,25 @@ public partial class MainView : UserControl
     {
         MainSplit.IsPaneOpen = true;
     }
+
+    private void Border_PointerPressed(object? sender, Avalonia.Input.PointerPressedEventArgs e)
+    {
+        if (TopLevel.GetTopLevel(this) is Window window)
+        {
+            window.BeginMoveDrag(e);
+        }
+    }
+
+    private void ThemeButton_Click(object? sender, RoutedEventArgs e)
+    {
+        var theme = App.Current?.ActualThemeVariant;
+        if (theme == ThemeVariant.Dark)
+        {
+            App.Current?.RequestedThemeVariant = ThemeVariant.Light;
+        }
+        else
+        {
+            App.Current?.RequestedThemeVariant = ThemeVariant.Dark;
+        }
+    }
 }

@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  
+    <Color x:Key="BackgroundColor">#ffd5d6dd</Color>
+	<Color x:Key="BackgroundHoverColor">#FFc7c9d1</Color>
+	<Color x:Key="BackgroundActiveColor">#FFb9bbc6</Color>
+
+    <Color x:Key="ControlBackgroundColor">#FFFFFFFF</Color>
+    <Color x:Key="ControlBackgroundHoverColor">#FFf2f2f2</Color>
+    <Color x:Key="ControlBackgroundActiveColor">#FFe6e6e6</Color>
+    <Color x:Key="ControlBackgroundDisabledColor">#FFd9d9d9</Color>
+
+    <Color x:Key="ForegroundColor">#FF1E293B</Color>
+    <Color x:Key="ForegroundHoverColor">#FF334155</Color>
+    <Color x:Key="ForegroundActiveColor">#FF475569</Color>
+    <Color x:Key="ForegroundDisabledColor">#FF94A3B8</Color>
+
+    <Color x:Key="PrimaryColor">#FF3C6AA3</Color>
+    <Color x:Key="PrimaryLighterColor">#333C6AA3</Color>
+    <Color x:Key="SuccessColor">#FF66BB6A</Color>
+    <Color x:Key="WarningColor">#FFFFC107</Color>
+    <Color x:Key="DangerColor">#FFEF5350</Color>
+
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
+    <SolidColorBrush x:Key="BackgroundHoverBrush" Color="{StaticResource BackgroundHoverColor}" />
+    <SolidColorBrush x:Key="BackgroundActiveBrush" Color="{StaticResource BackgroundActiveColor}" />
+
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{StaticResource ControlBackgroundColor}" />
+    <SolidColorBrush x:Key="ControlBackgroundHoverBrush" Color="{StaticResource ControlBackgroundHoverColor}" />
+    <SolidColorBrush x:Key="ControlBackgroundActiveBrush" Color="{StaticResource ControlBackgroundActiveColor}" />
+    <SolidColorBrush x:Key="ControlBackgroundDisabledBrush" Color="{StaticResource ControlBackgroundDisabledColor}" />
+
+    <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}" />
+    <SolidColorBrush x:Key="ForegroundHoverBrush" Color="{StaticResource ForegroundHoverColor}" />
+    <SolidColorBrush x:Key="ForegroundActiveBrush" Color="{StaticResource ForegroundActiveColor}" />
+    <SolidColorBrush x:Key="ForegroundDisabledBrush" Color="{StaticResource ForegroundDisabledColor}" />
+
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
+    <SolidColorBrush x:Key="PrimaryLighterBrush" Color="{StaticResource PrimaryLighterColor}" />
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}" />
+    <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}" />
+    <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}" />
+  
+</ResourceDictionary>

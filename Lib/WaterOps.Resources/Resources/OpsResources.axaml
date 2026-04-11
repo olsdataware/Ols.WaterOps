@@ -14,5 +14,19 @@
     <StreamGeometry x:Key="Close">m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z</StreamGeometry>
     <StreamGeometry x:Key="Add">M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z</StreamGeometry>
     <StreamGeometry x:Key="Delete">M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z</StreamGeometry>
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+          <ResourceDictionary.MergedDictionaries>
+            <ResourceInclude Source="avares://WaterOps.Resources/Resources/Themes/Light.axaml"/>
+          </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark">
+          <ResourceDictionary.MergedDictionaries>
+            <ResourceInclude Source="avares://WaterOps.Resources/Resources/Themes/Dark.axaml"/>
+          </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
     
 </ResourceDictionary>

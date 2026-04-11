@@ -5,6 +5,7 @@ namespace WaterOps.StCharles;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
 using Calibrations.Services.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Repositories.Models;
@@ -12,6 +13,8 @@ using Repositories.Services.Extensions;
 using Resources.Helpers;
 using ViewModels;
 using Views;
+using WaterOps.Updates.Interfaces;
+using WaterOps.Updates.Services.Extensions;
 
 public partial class App : Application
 {
@@ -25,11 +28,14 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            var collection = new ServiceCollection();
             var window = new MainWindow();
-            collection.AddResources(window);
-            collection.AddRepositories(new DbContainer { Container = "StCharles" });
-            collection.AddCalibrations();
+
+            var collection = new ServiceCollection()
+                .AddResources(window)
+                .AddRepositories(new DbContainer { Container = "StCharles" })
+                .AddCalibrations()
+                .AddUpdates("StCharles");
+
             collection.AddScoped<MainView>();
             collection.AddScoped<MainViewModel>();
 

@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.3.13" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.3.13" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.13" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.13" />
+    <PackageReference Include="Avalonia" Version="12.0.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.0.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.0" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="12.0.0" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Include="Avalonia.Diagnostics" Version="11.3.13">
       <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
@@ -19,12 +19,14 @@
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageReference Include="Tmds.DBus.Protocol" Version="0.92.0" />
+    <PackageReference Include="Velopack" Version="0.0.1298" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Lib\WaterOps.Calculations\WaterOps.Calculations.csproj" />
     <ProjectReference Include="..\..\..\Lib\WaterOps.Repositories\WaterOps.Repositories.csproj" />
     <ProjectReference Include="..\..\..\Lib\WaterOps.Resources\WaterOps.Resources.csproj" />
+    <ProjectReference Include="..\..\..\Lib\WaterOps.Updates\WaterOps.Updates.csproj" />
     <ProjectReference Include="..\..\..\WaterOps.Core\WaterOps.Core.csproj" />
     <ProjectReference Include="..\..\Modules\WaterOps.Calibrations\WaterOps.Calibrations.csproj" />
   </ItemGroup>

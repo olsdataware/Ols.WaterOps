@@ -8,10 +8,12 @@ namespace WaterOps.Resources.Services.Extensions;
 
 public static class Inject
 {
-    public static void AddResources(this IServiceCollection collection, Window window)
+    public static IServiceCollection AddResources(this IServiceCollection collection, Window window)
     {
         collection.AddSingleton<INavigationService, NavigationService>();
         collection.AddSingleton<IViewModelFactory, ViewModelFactory>();
         collection.AddSingleton<IDialogService>(new DialogService(window));
+
+        return collection;
     }
 }
